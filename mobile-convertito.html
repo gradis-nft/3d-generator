@@ -6,15 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertito Mobile</title>
     <style>
+      @font-face {
+        font-family: 'GT Maru';
+        src: url('https://cdn.gradis.art/fonts/GT-Maru-Mono.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+      }
+      
+      @font-face {
+        font-family: 'Maru-Mega-Mini';
+        src: url('https://cdn.gradis.art/fonts/GT-Maru-Proportional.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+      }
+      
+      @font-face {
+        font-family: 'GT Maru Mega';
+        src: url('https://cdn.gradis.art/fonts/GT-Maru-Mega-Maxi.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0px;
+      }
       *{
         margin: 0;
         padding: 0;
+        font-family: "GT Maru";
       }
       #wrapper{
         display:grid;
         justify-content:center;
         place-items:center;
         height:100vh;
+        padding: 10px;
       }
       #container {
         width: 100%;
@@ -27,7 +52,7 @@
         color: white;
         text-align: left;
         width:100%;
-        margin-bottom: 10px;
+        margin: 0 8px 10px 8px;
       }
       .button{
         color: white;
@@ -127,11 +152,11 @@
       const gifId = Math.floor(Math.random() * 69) + 1;
      console.log(gifId);
       const gradis = document.getElementById("gradis");
-      gradis.src = `gifs/${gifId}.gif`;
-      console.log(gradisBackground[gifId.toString()]);
       document.body.style.background = gradisBackground[gifId.toString()];
       const button = document.querySelector(".button");
       button.style.background = gradisBackground[gifId.toString()];
+      gradis.src = `gifs/${gifId}.gif`;
+      console.log(gradisBackground[gifId.toString()]);
     }
 
     setGradis();
